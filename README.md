@@ -48,6 +48,8 @@
     roslaunch pmod_ros pmod.launch
     ```
 
+## PMOD
+
 ### ROS Launch
 
 ```xml
@@ -123,4 +125,25 @@ width: 512                  # Width of the input/output image[px]
 
 sub_queue_size: 10          # Queue size of Subscriber
 pub_queue_size: 2           # Queue size of Publisher
+```
+
+## dynamic2noground
+
+### ROS Launch
+
+```xml
+<launch>
+    <node name="dynamic2noground" pkg="pmod_ros" type="dynamic2noground" output="screen">
+        <rosparam command="load" file="$(find pmod_ros)/config/dynamic2noground.yaml"/>
+    </node>
+</launch>
+```
+
+### ROS Param
+
+```yml
+init_maps:                  # The static maps described here can be loaded at node startup.
+  - /workspace/src/pmod_ros/maps/noground.pcd
+init_frame_id: map          # Coordinate system of the static maps to be loaded at node startup.
+radius: 5.0                 # Radius of the area to be extracted from the maps.
 ```
