@@ -1,0 +1,4 @@
+init_maps:
+  - /workspace/src/pmod_ros/maps/noground.pcd
+init_frame_id: map
+radius: 5.0

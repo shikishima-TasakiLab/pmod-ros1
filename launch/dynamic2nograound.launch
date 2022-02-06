@@ -1,0 +1,5 @@
+<launch>
+    <node name="dynamic2noground" pkg="pmod_ros" type="dynamic2noground" output="screen">
+        <rosparam command="load" file="$(find pmod_ros)/config/dynamic2noground.yaml"/>
+    </node>
+</launch>

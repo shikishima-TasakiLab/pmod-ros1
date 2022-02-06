@@ -1,0 +1,8 @@
+build/
+devel/
+.catkin_workspace
+.catkin_tools/
+pmod_ws/src/CMakeLists.txt
+.vscode/
+logs/
+*.bag

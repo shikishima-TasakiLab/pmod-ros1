@@ -1,0 +1,13 @@
+<launch>
+    <node name="pmod" pkg="pmod_ros" type="pmod" output="screen">
+        <rosparam command="load" file="$(find pmod_ros)/config/5class.yaml"/>
+        <remap from="~camera" to="/zed/zed_node/left/image_rect_color"/>
+        <remap from="~camera/camera_info" to="/zed/zed_node/left/camera_info"/>
+        <remap from="~points_dynamic" to="/dynamic2noground/points_dynamic"/>
+    </node>
+
+    <node name="dynamic2noground" pkg="pmod_ros" type="dynamic2noground" output="screen">
+        <rosparam command="load" file="$(find pmod_ros)/config/dynamic2noground.yaml"/>
+        <remap from="~points_no_ground" to="/points_no_ground" />
+    </node>
+</launch>

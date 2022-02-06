@@ -1,0 +1,57 @@
+checkpoint: /workspace/src/pmod_ros/model/00138_PMOD_G.pt
+
+sub_queue_size: 50
+
+hz: 10.0
+
+pub_seg_id: True
+pub_seg_color: False
+pub_depth: True
+pub_points_ground: False
+pub_points_no_ground: False
+pub_points_static: False
+pub_points_dynamic: True
+
+use_optical_frame: False
+
+seg_labels:
+  - id: 0
+    tag: Void
+    is_ground: False
+    is_dynamic: False
+    color:
+      r: 0
+      g: 0
+      b: 0
+  - id: 1
+    tag: Ground
+    is_ground: True
+    is_dynamic: False
+    color:
+      r: 70
+      g: 130
+      b: 180
+  - id: 2
+    tag: Obstacle
+    is_ground: False
+    is_dynamic: False
+    color:
+      r: 70
+      g: 70
+      b: 70
+  - id: 3
+    tag: Vehicle
+    is_ground: False
+    is_dynamic: True
+    color:
+      r: 0
+      g: 0
+      b: 142
+  - id: 4
+    tag: Person
+    is_ground: False
+    is_dynamic: True
+    color:
+      r: 220
+      g: 20
+      b: 60

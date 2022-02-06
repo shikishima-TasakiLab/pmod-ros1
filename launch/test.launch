@@ -1,0 +1,11 @@
+<launch>
+    <node name="test_imgpub" pkg="pmod_ros" type="test_imgpub">
+        <param name="camera_path" value="$(find pmod_ros)/test/test_camera.png" />
+        <param name="sparse_depth_path" value="$(find pmod_ros)/test/test_sparse_depth.exr" />
+        <param name="Fx" value="788.629315" />
+        <param name="Cx" value="687.158398" />
+        <param name="Fy" value="786.382230" />
+        <param name="Cy" value="317.752196" />
+        <param name="frame_id" value="camera" />
+    </node>
+</launch>
