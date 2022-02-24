@@ -211,7 +211,7 @@ void PMOD::_timer_callback(const ros::TimerEvent &e)
         torch::Tensor label_tensor_cpu = out_seg.to(torch::kCPU);
         cv_bridge::CvImage label_cv(camera_msg->header, sensor_msgs::image_encodings::TYPE_8UC1, cv::Mat(this->_shape, CV_8UC1, label_tensor_cpu.data_ptr()));
         sensor_msgs::ImagePtr label_msg = label_cv.toImageMsg();
-        label_msg->header.stamp.sec = camera_msg->header.stamp.sec;
+        label_msg->header.stamp = camera_msg->header.stamp;
         this->_pub_seg_id->publish(label_msg);
     }
 
